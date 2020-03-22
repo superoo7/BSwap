@@ -1,11 +1,11 @@
 import BigNumber from "bignumber.js";
 
 // @ts-ignore
-const Hive = artifacts.require("BHive");
+const BHive = artifacts.require("BHive");
 
 contract("WrappedToken", accounts => {
   it("unable to renounce ownership as Owner", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     try {
       await hive.renounceOwnership({ from: accounts[0] });
       throw new Error("ERROR: Owner can renounceOwnership");
@@ -18,7 +18,7 @@ contract("WrappedToken", accounts => {
   });
 
   it("adds minter", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     assert.equal(await hive.isMinter(accounts[1]), false);
     await hive.addMinter(accounts[1]);
     assert.equal(await hive.isMinter(accounts[1]), true);
@@ -34,7 +34,7 @@ contract("WrappedToken", accounts => {
   });
 
   it("removes minter", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     assert.equal(await hive.isMinter(accounts[2]), false);
     await hive.addMinter(accounts[2]);
     assert.equal(await hive.isMinter(accounts[2]), true);

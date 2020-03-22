@@ -1,17 +1,17 @@
 import BigNumber from "bignumber.js";
 
 // @ts-ignore
-const Hive = artifacts.require("BHive");
+const BHive = artifacts.require("BHive");
 
 contract("Burnable", accounts => {
   it("should have 0 supply token", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     const totalSupply = await hive.totalSupply();
     assert.equal(totalSupply.toString(), new BigNumber(0).toString());
   });
 
   it("should burn token", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     const amount = new BigNumber(2000);
     // Mint
     await hive.mint(accounts[0], amount, { from: accounts[0] });

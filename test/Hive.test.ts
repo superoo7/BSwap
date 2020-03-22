@@ -1,9 +1,9 @@
 // @ts-ignore
-const Hive = artifacts.require("BHive");
+const BHive = artifacts.require("BHive");
 
 contract("BHive", accounts => {
   it("Show correct details", async () => {
-    const hive = await Hive.deployed();
+    const hive = await BHive.deployed();
     const [name, decimals, symbol] = await Promise.all([
       hive.name(),
       hive.decimals(),
