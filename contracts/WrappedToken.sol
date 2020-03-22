@@ -19,11 +19,11 @@ contract WrappedToken is
         revert("renouncing ownership is blocked");
     }
 
-    function addMinter(address account) public onlyOwner {
-        _addMinter(account);
-    }
-
     function removeMinter(address account) public onlyOwner {
         _removeMinter(account);
+    }
+
+    function removePauser(address account) public onlyOwner {
+        _removePauser(account);
     }
 }

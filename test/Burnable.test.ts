@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 
 // @ts-ignore
-const Hive = artifacts.require("Hive");
+const Hive = artifacts.require("BHive");
 
 contract("Burnable", accounts => {
   it("should have 0 supply token", async () => {

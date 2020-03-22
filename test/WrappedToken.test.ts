@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 
 // @ts-ignore
-const Hive = artifacts.require("Hive");
+const Hive = artifacts.require("BHive");
 
 contract("WrappedToken", accounts => {
   it("unable to renounce ownership as Owner", async () => {
