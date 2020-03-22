@@ -1,0 +1,32 @@
+{
+  "name": "hive-pegged",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test",
+    "build": "truffle compile && typechain --target=truffle build/**/*.json",
+    "postinstall": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.0",
+    "bignumber.js": "^9.0.0",
+    "openzeppelin-solidity": "^2.5.0",
+    "ts-node": "^8.8.1",
+    "tsconfig-paths": "^3.9.0",
+    "web3": "^1.2.6"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "truffle-typings": "^1.0.8",
+    "typechain": "^1.0.5",
+    "typechain-target-truffle": "^1.0.2",
+    "typescript": "^3.8.3"
+  }
+}
